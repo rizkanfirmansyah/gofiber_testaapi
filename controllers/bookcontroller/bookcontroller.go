@@ -35,7 +35,10 @@ func Create(c *fiber.Ctx) error {
 			"message": err.Error(),
 		})
 	}
-	return nil
+
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"message": "Data has been created",
+	})
 }
 func Delete(c *fiber.Ctx) error {
 	return nil
